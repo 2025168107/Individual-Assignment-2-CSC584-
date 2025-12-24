@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Thu Dec 18 22:04:51 SGT 2025:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-019b-31c7-1e89-00000d7b6708 
+on database directory C:\Users\haika\NetBeansProjects\IndividualAssignment\student_profiles_db with class loader sun.misc.Launcher$AppClassLoader@73d16e93 
+Loaded from file:/C:/Program%20Files/glassfish-4.1.1/javadb/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_202-b08
+user.dir=C:\Users\haika\NetBeansProjects\IndividualAssignment
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

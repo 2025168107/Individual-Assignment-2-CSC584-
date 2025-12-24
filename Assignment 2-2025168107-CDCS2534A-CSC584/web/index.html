@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Student Profile Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        #backButtonContainer {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+        #backButton {
+            background: #6c757d;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            font-weight: bold;
+        }
+        #backButton:hover {
+            background: #5a6268;
+        }
+        .container {
+            max-width: 600px;
+            margin: 70px auto 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"] {
+            width: 95%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .actions {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .btn {
+            background: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .view-btn {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="backButtonContainer">
+        <a href="viewProfiles.jsp" id="backButton">← Back to Profiles</a>
+    </div>
+    <div class="container">
+        <h2>Student Profile Form</h2>
+        <form action="ProfileServlet" method="post">
+            <div class="form-group">
+                <label for="studentId">Student ID *</label>
+                <input type="text" id="studentId" name="studentId" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="program">Programme</label>
+                <input type="text" id="program" name="program">
+            </div>
+            <div class="form-group">
+                <label for="hobbies">Hobbies</label>
+                <input type="text" id="hobbies" name="hobbies">
+            </div>
+            <div class="actions">
+                <button type="submit" class="btn">Save Profile</button>
+                <a href="viewProfiles.jsp" class="view-btn">View All Profiles</a>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.getElementById('backButton').onclick = function(e) {
+            const inputs = document.querySelectorAll('input');
+            let hasData = false;
+            
+            for(let i = 0; i < inputs.length; i++) {
+                if(inputs[i].value.trim() !== '') {
+                    hasData = true;
+                    break;
+                }
+            }
+            
+            if(hasData) {
+                if(!confirm("You have unsaved data. Go back to profiles?")) {
+                    e.preventDefault();
+                }
+            }
+        };
+    </script>
+</body>
+</html>
